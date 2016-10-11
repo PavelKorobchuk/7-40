@@ -1,0 +1,95 @@
+<div ng-controller="mainController">
+	<div class="pass-list">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="pass-list__add">
+						<div class="row">
+							<div class="col-md-12">
+								<span class="title">Add new password-item</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<label>Resource name</label>
+								<input type="text" ng-model="linkName" value="{{linkName}}">
+							</div>
+							<div class="col-md-3">
+								<label>Login</label>
+								<input type="text" ng-model="loginName" value="{{loginName}}">
+							</div>
+							<div class="col-md-3">
+								<label>Password</label>
+								<input type="text" ng-model="passName" value="{{passName}}">
+							</div>
+							<div class="col-md-3">
+								<div class="btn btn-success" ng-click="addRow(linkName, loginName, passName)"><i
+										class="fa fa-plus" aria-hidden="true"></i></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pass-list__items clearfix">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Password List</h1>
+						<div class="title">
+							<div class="row">
+								<div class="col-md-3">
+									<span>Resource Name:</span>
+								</div>
+								<div class="col-md-3">
+									<span>Login:</span>
+								</div>
+								<div class="col-md-6">
+									<span>Password:</span>
+								</div>
+							</div>
+						</div>
+						<div class="item" ng-repeat="item in itemArray">
+							<div class="row">
+								<div class="col-md-3 link" ng-show="!passEdit.editable">
+									{{item.link}}
+								</div>
+								<div class="col-md-3 link" ng-show="passEdit.editable">
+									<input type="text" ng-model="item.link">
+								</div>
+								<div class="col-md-3 name" ng-show="!passEdit.editable">
+									{{item.name}}
+								</div>
+								<div class="col-md-3 name" ng-show="passEdit.editable">
+									<input type="text" ng-model="item.name">
+								</div>
+								<div class="col-md-4 pass" ng-show="!passEdit.editable">
+									<input type="{{inputType || password}}" value="{{item.pass}}"
+										   ng-focus="inputType = 'text'"
+										   ng-blur="inputType = 'password'">
+								</div>
+								<div class="col-md-4 pass" ng-show="passEdit.editable">
+									<input type="text" ng-model="item.pass">
+								</div>
+								<div class="col-md-2 text-right" ng-show="!passEdit.editable">
+									<div class="btn btn-primary" ng-click="passEdit.setEditableTrue($index)">
+										<i class="fa fa-pencil" aria-hidden="true"></i>
+									</div>
+									<div class="btn btn-danger" ng-click="removeItem($index)">
+										<i class="fa fa-times" aria-hidden="true"></i>
+									</div>
+								</div>
+								<div class="col-md-2 text-right" ng-show="passEdit.editable">
+									<div class="btn btn-success" ng-click="savePass(item.name, item.pass, item.link)">
+										<i class="fa fa-check-square" aria-hidden="true"></i>
+									</div>
+									<div class="btn btn-danger" ng-click="passEdit.setEditableFalse()">
+										<i class="fa fa-undo" aria-hidden="true"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

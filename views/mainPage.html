@@ -1,1 +1,25 @@
 
+<div class="main-form" ng-controller="mainController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+	{{title}}
+	<form name="logForm">
+		<div class="col">
+			<label>Login</label>
+			<input type="text" class="form-control" ng-model="userName" ng-minlength="1" ng-required="true">
+		</div>
+		<div class="col">
+			<label>Password</label>
+			<input type="password" class="form-control" ng-model="userPass" ng-minlength="1" ng-required="true">
+		</div>
+		 <button type="submit" class="btn" ng-click="signIn(userName, userPass)" >Sign in</button>
+		<button type="submit" class="btn" ng-click="signUp(userName, userPass)" >Sign up</button>
+	</form>
+	<div class="message">
+		<div class="message-success" ng-show="userSuccess">Account was created</div>
+		<div class="message-error" ng-show="userError">Please, enter correct username and password</div>
+	</div>
+</div>
+		</div>
+</div></div>
