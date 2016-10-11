@@ -1,0 +1,80 @@
+.pass-list .item{
+    text-shadow: none;
+    -webkit-text-shadow: none;
+    margin: 15px 0;
+    padding: 10px 15px 10px 15px;
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.48);
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.48);
+    background: #ffffff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    line-height: 33px;
+}
+.pass-list .item input{
+    line-height: 25px;
+    padding: 0 5px;
+}
+.pass-list__add{
+    padding: 5px 20px 20px 20px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+label{
+    display: block;
+    color: #ffffff;
+}
+.pass-list__add .btn{
+    margin-top: 17px;
+}
+.pass-list .title{
+    display: block;
+    font-size: 22px;
+    line-height: 24px;
+    margin-top: 15px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.pass-list__items{
+    margin-bottom: 25px;
+}
+.pass-list{
+    padding-bottom: 50px;
+}
+.main-form{
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
+.pass-list__add input{
+    width: 100%;
+}
+.main-form .col{
+    margin: 10px 0;
+}
+.pass-list h1{
+    color: #ffffff;
+}
+.pass-list span{
+    color: #ffffff;
+}
+.message-error, .message-success{
+    color: #ffffff;
+}
+body, html{
+    text-shadow: 1px 1px 1px #000;
+    -webkit-text-shadow: 1px 1px 1px #000;
+
+    height: 100%;
+    min-height: 100%;
+    background: #363d6f;
+}
+.pass-list__items .title{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+@media screen and (max-width: 1024px){
+.pass-list__items .title{
+    display: none;
+}
+}
